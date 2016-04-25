@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("https://unsplash.it/200/300/?random
+");
+}
+
+#btn-info {
+  display: inline-block;
+  background:rgba(255,255,255,.5);
+  margin:10px;
+  padding:5px;
+  font-size: 18px;
+  cursor: pointer;
+  outline:none;
+  border:2px solid #fff;
+  color:#555;
+  font-weight: bold;
+  box-shadow:1px 1px #333, inset 1px 1px #333;
+}
+
+#info {
+  display:none;
+  position: absolute;
+  width:80%;
+  height:auto;
+  padding:15px;
+  box-sizing:border-box;
+  left:10%;
+  top:80px;
+  background:#fff;
+  z-index:1000;
+  text-align: justify;
+  & p {
+    margin-top: 5px;
+    line-height:22px;
+  }
+  
+  & h1 {
+    margin-bottom: 5px;
+  }
+}
+
+#mask-info{
+  display:none;
+  position: absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.5);
+  top:0;
+  left:0;
+  z-index:999;
+}
+
+#btn-close {
+  float: right;
+  display: inline-block;
+  background:transparent;
+  padding:5px;
+  font-size:18px;
+  cursor: pointer;
+  outline:none;
+  border:none;
+  
+  &:hover {
+    background:#eee;
+  }
+}
+
+#simon-game {
+  position: absolute;
+  background:#555;
+  width:500px;
+  height:500px;
+  top:50%;
+  left:50%;
+  margin:-275px 0 0 -275px;
+  border-radius:100%;
+  overflow:hidden;
+  border:30px solid #333;
+  
+  &:after {
+    content:"";
+    position:absolute;
+    width:100%;
+    height:30px;
+    background:#333;
+    margin-top:-15px;
+    top:50%; 
+    left:0;
+    z-index:50;
+  }
+
+  &:before {
+    content:"";
+    position:absolute;
+    width:30px;
+    height:150%;
+    background:#333;
+    margin-left:-15px;
+    top:0; 
+    left:50%;
+    z-index:50;
+  }
+}
+
+.btn-color {
+  opacity:.5;
+  width:50%;
+  float:left;
+  height:50%;
+  border:0;
+}
+
+#center{
+  background:#333;
+  width:50%;
+  height:50%;
+  position:absolute;
+  left:25%;
+  top:25%;
+  z-index:100;
+  border-radius:100%;
+  text-align:center;
+  box-sizing:border-box;
+  padding-top:7%;
+  color:#ddf;
+  
+  & h1 {
+    font-size:45px;
+    margin-bottom: 10px;
+  }
+  
+  & p {
+    font-size:25px;
+  }
+}
+
+#screen {
+  background:black;
+  border:2px solid #5f5;
+  width:50%;
+  margin: 0 auto;
+  border-radius:10px;
+  color:#5f5;
+  margin-bottom:15px;
+}
+
+.user {
+  cursor: pointer;
+  
+  &:active {
+    opacity: 1 !important;
+  }
+}
+
+#btn-start, #btn-restart {
+  border: 3px solid #000;
+  background:rgba(255,255,0,.7);
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  cursor: pointer;
+  position:relative;
+  outline:none;
+  margin:15px 10px;
+  
+  &:active{
+    background:rgba(255,255,0,1);
+  }
+}
+
+#btn-strict {
+  width:50px;
+  height:30px;
+  border:2px solid #000;
+  background:rgba(255, 100,100,1);
+  position:relative;
+  border-radius: 15px;
+  outline:none;
+  padding:3.5px;
+  box-sizing:border-box;
+  
+  &:after {
+    content:"";
+    float:left;
+    transition: all ease .6s;
+    background:#333;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    cursor:pointer;
+    z-index:50;
+    position: relative;
+  }
+  
+  &:before {
+    content: "Strict";
+    position:absolute;
+    text-align:center;
+    width:100%;
+    left:0;
+    bottom:100%;
+    color:#fff;
+  }
+}
+#icon-check{
+  position:absolute;
+  z-index:10;
+  opacity:0;
+  left:5px;
+  top:5px;
+  transition: all .6s;
+}
+
+#lb {
+  position:relative;
+  display:inline-block;
+  margin:10px 0 0 10px;
+}
+
+#chk-strict {
+  display:none;
+  &:checked ~ #btn-strict {
+    background: #5c5;
+    &:after {
+      margin-left:20px;
+    }
+  }
+  
+  &:checked ~ #icon-check {
+    opacity: 1;
+  }
+}
+
+#btn-start:before {
+    content: "Start";
+    position:absolute;
+    text-align:center;
+    left:0;
+    width:100%;
+    bottom:100%;
+    margin-bottom:5px;
+    color:#fff;
+  }
+
+#btn-restart:before {
+    content: "Restart";
+    position:absolute;
+    text-align:center;
+    left:50%;
+    margin-left:-75px;
+    width:150px;
+    bottom:100%;
+    margin-bottom:5px;
+    color:#fff;
+  }
+
+
+#red {
+  background: #f33;
+}
+#green {
+  background: #5f5;
+}
+#blue {
+  background: #22f;
+}
+#yellow {
+  background: #ff1;
+}
